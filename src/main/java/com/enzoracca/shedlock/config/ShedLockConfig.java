@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@EnableSchedulerLock(defaultLockAtMostFor = "PT30S")
+@EnableSchedulerLock(defaultLockAtMostFor = "1m")
 public class ShedLockConfig {
 
     //Specificando usingDbTime () (introdotto in 4.9.3) il provider di blocco utilizzerà l'ora UTC in base all'ora del server DB.

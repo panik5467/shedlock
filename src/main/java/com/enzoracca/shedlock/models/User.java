@@ -1,4 +1,4 @@
-package com.enzoracca.shedlock.entities;
+package com.enzoracca.shedlock.models;
 
 import java.io.Serializable;
 

@@ -1,6 +1,6 @@
 package com.enzoracca.shedlock.config;
 
-import com.enzoracca.shedlock.entities.User;
+import com.enzoracca.shedlock.models.User;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
