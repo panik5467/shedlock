@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.sql.DataSource;
 
@@ -23,6 +24,9 @@ import javax.sql.DataSource;
 @EnableBatchProcessing
 @EnableScheduling
 public class BatchConfig {
+
+    @Value("${cron.job.name}")
+    private String jobName;
 
     private StepBuilderFactory stepBuilderFactory;
 
@@ -71,7 +75,7 @@ public class BatchConfig {
 
     @Bean
     Job job() {
-        return jobBuilderFactory.get("job")
+        return jobBuilderFactory.get(jobName)
                 .start(step())
                 .build();
     }
